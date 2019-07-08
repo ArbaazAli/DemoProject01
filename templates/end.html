@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/end.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>Test Page</title>
+</head>
+<body >
+    <h1> Form </h1>
+    <form action="/login" method="post" onsubmit="return matchpass()">
+                        {% csrf_token %}
+                        <div class= "control">
+                            <input name="first_name" type="text" placeholder="First Name">
+                            <input name="last_name" type="text" placeholder="Last Name">
+                            <input name="contact" type="text" placeholder="Contact">
+                            <input name="mail" type="email" placeholder="Email">
+                            <input name="password" type="password"  id="pass1" class="input" placeholder="Enter Password">
+                            <input name="re_password" type="password"  id="pass2" class="input" placeholder="Enter Password" >
+                        </div>
+        <button type="submit" name="submit" id="submit" class="btn btn-primary mb-2">Submit </button><br>
+    </form> <center>
+    <a href="/home" class="text-decoration-none"> click </a>
+    <script src="{% static 'javascript/validpass.js' %}">    </script>
+</center></body>
+</html>

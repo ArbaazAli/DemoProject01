@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head> {% include 'header.html' %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+    <meta charset="UTF-8">
+    <title>Log In</title>
+</head>
+<body><center>
+    <form action="/login/" method="post" onsubmit="return myFunction()">
+        {% csrf_token %}
+        <h1> Log In </h1><br>
+        <input type="email" name="username" placeholder="Email"><br><br>
+        <input type="password" name="password" id="pass1" required placeholder="Password"><br><br>
+       <!--- <input type="password" name="pass2" id="pass2" placeholder="Re-enter Password"><br><br> --->
+        <button type="submit" name="submit" id="submit" class="btn btn-success mb-2">Login</button><br><br>
+        <p style="color : red"> {{ error }}</p>
+
+    </form>
+            <a href="{% url 'Signup Page' %}">
+            <button type="button" class="create-account">Create Account</button></a>
+    <script>
+        function myFunction(){
+         if (document.getElementById('pass1').value ==
+           document.getElementById('pass2').value) {
+           alert("Login successful!!")
+          }
+          else {
+            alert ("Password does not match!!");
+            return false;
+          }
+         }
+     </script>
+</center></body>
+</html>

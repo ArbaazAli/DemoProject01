@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+</head>
+<body><center>
+    <form action="/home" onsubmit="return myFunction()">
+        <h1> Log In </h1><br>
+        <input type="email" name="email" placeholder="Email address"><br><br>
+        <input type="password" name="pass1" id="pass1" required placeholder="Password"><br><br>
+        <input type="password" name="pass2" id="pass2" placeholder="Re-enter Password"><br><br>
+        <button type="submit" name="submit" id="submit" class="btn btn-outline-success">Login</button><br><br>
+    </form>
+    New User? <a href="http://127.0.0.1:8000/" class="text-decoration-none">Register</a>
+    <script>
+        function myFunction(){
+         if (document.getElementById('pass1').value ==
+           document.getElementById('pass2').value) {
+           alert("Login successful!!")
+          }
+          else {
+            alert ("Password does not match!!");
+            return false;
+          }
+         }
+     </script>
+</center></body>
+</html>

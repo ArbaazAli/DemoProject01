@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+    {% include 'header.html' %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+</head>
+<body style="background-color:#DCDCDC;" ><center> <br>
+
+<h3>Home Page </h3><br><br>
+    <form method="post" action="/logout/" onsubmit="return submit()">
+        {% csrf_token %}
+    <h5>Student <b style=" color :blue"> {{username }} </b> is  logged in successfully.<br> </h5><br>
+        <br> <button type="submit" class="btn btn-danger mb-2">Log out</button><br>
+    </form><br>
+    <sup style="color : red">Raw page (under construction)</sup>
+    <script>
+        function submit(){
+         alert("Successfully logged out!!!");}
+
+    </script>
+</center></body>
+</html>

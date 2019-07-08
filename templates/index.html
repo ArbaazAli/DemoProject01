@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head> {% include 'header.html' %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+    <meta charset="UTF-8">
+    <title>Signup Page</title>
+</head>
+<body>
+<center>
+    <form action="/submit/"  method="post" onsubmit="return matchpass()">
+       {% csrf_token %}
+       <div class="container">
+        <h1 > Registration </h1><br>
+
+                   <input type="text" name="first_name" class="form-control" placeholder="First name" maxlength="15">
+
+                   <input type="text" name="last_name" class="form-control" placeholder="Last name" maxlength="15">
+
+                   <input type="email" name="mail" class="form-control" placeholder="Email address">
+
+                   <input type="tel" name="contact" class="form-control" placeholder="Contact" minlength="10" maxlength="10">
+
+                   <input type="password" name="password" id="pass1" placeholder="Password" class="form-control" required minlength="4">
+
+                   <input type="password" name="re_password" id="pass2" class="form-control" placeholder="Re-enter Password">
+
+                  <button type="submit" name="submit" id="submit" class="btn btn-primary mb-2">Submit </button><br>
+       </div>
+
+    </form>
+            <a href="/login/">
+            <button type="button" class="create-account">Log In</button></a>
+    <script src="{% static 'javascript/validpass.js' %}"></script>
+</center></body>
+</html>
