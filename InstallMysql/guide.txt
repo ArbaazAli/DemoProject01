@@ -1,0 +1,8 @@
+			Istallation Guide for Installtion Mysql Client on windows os
+
+
+			1. place mysql wheel file in the disk e.g. D:/   			#Here is have place the wheel file in D local disk
+			2. copy the name of mysql wheel file from located disk 		#e.g. mysqlclient-1.4.2-cp37-cp37m-win32.whl
+			3. Install it using pip command see below
+			4. pip install D:/mysqlclient-1.4.2-cp37-cp37m-win32.whl    #Path for installling the app   
+			5. Done :)
